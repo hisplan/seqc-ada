@@ -1,0 +1,9 @@
+{
+    "pipelineType": "SEQC",
+    "project": "Project 123",
+    "sample": "S316",
+    "owner": "chunj",
+    "destination": "s3://dp-lab-batch/outputs/SEQC",
+    "transfer": "skip",
+    "comment": "SEQC Pipeline"
+}
