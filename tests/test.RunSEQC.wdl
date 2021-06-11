@@ -1,8 +1,8 @@
 version 1.0
 
-import "modules/RunSEQC.wdl" as RunSEQC
+import "modules/RunSEQC.wdl" as module
 
-workflow SEQC {
+workflow RunSEQC {
 
     input {
         String version
@@ -21,7 +21,7 @@ workflow SEQC {
         String email
     }
 
-    call RunSEQC.RunSEQC {
+    call module.RunSEQC {
         input:
             version = version,
             assay = assay,

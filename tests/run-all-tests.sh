@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="Greeter"
+modules="RunSEQC"
 
 usage()
 {

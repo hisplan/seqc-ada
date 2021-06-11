@@ -3,7 +3,7 @@
 #hack: get dependency set up
 ln -s ../modules/ modules
 
-modules="Greeter"
+modules="RunSEQC"
 
 for module_name in $modules
 do
