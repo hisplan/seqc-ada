@@ -33,4 +33,30 @@ workflow RunSEQC {
             outputPrefix = outputPrefix,
             email = email
     }
+
+    output {
+        File alignedBam = RunSEQC.alignedBam
+        File mergedFastq = RunSEQC.mergedFastq
+
+        File denseMatrix = RunSEQC.denseMatrix
+
+        File sparseBarcodes = RunSEQC.sparseBarcodes
+        File sparseGenes = RunSEQC.sparseGenes
+        File sparseMoleculeCounts = RunSEQC.sparseMoleculeCounts
+        File sparseReadCounts = RunSEQC.sparseReadCounts
+
+        File h5 = RunSEQC.h5
+
+        File miniSummary = RunSEQC.miniSummary
+        File alignmentSummary = RunSEQC.alignmentSummary
+        File summary = RunSEQC.summary
+
+        File deGeneList = RunSEQC.deGeneList
+
+        File preCorrectionReadArray = RunSEQC.preCorrectionReadArray
+        File cbCorrection = RunSEQC.cbCorrection
+
+        File daskReport = RunSEQC.daskReport
+        File? log = RunSEQC.log
+    }
 }

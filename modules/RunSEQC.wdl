@@ -15,7 +15,7 @@ task RunSEQC {
 
         Float inputSize = 250
         Int numCores = 8
-        Int memoryGB = 64
+        Int memoryGB = 100
     }
 
     String dockerImage = "hisplan/cromwell-seqc:" + version
@@ -36,11 +36,41 @@ task RunSEQC {
             --output-prefix ~{outputPrefix} \
             --email ~{email} \
             --local --no-terminate
+
+            # no-filter-low-coverage: ""
+            # min-poly-t: "0"
+            
+            # filter-mode: snRNA-seq
+            # max-insert-size: 2304700     
+
+        ls -al
     >>>
 
     output {
-        Array[File] outFiles = glob(outputPrefix + "*")
-        File? outLog = "seqc_log.txt"
+        File alignedBam = outputPrefix + "_Aligned.out.bam"
+        File mergedFastq = outputPrefix + "_merged.fastq.gz"
+
+        File denseMatrix = outputPrefix + "_dense.csv"
+
+        File sparseBarcodes = outputPrefix + "_sparse_counts_barcodes.csv"
+        File sparseGenes = outputPrefix + "_sparse_counts_genes.csv"
+        File sparseMoleculeCounts = outputPrefix + "_sparse_molecule_counts.mtx"
+        File sparseReadCounts = outputPrefix + "_sparse_read_counts.mtx"
+
+        File h5 = outputPrefix + ".h5"
+
+        File miniSummary = outputPrefix + "_mini_summary.pdf"
+        File alignmentSummary = outputPrefix + "_alignment_summary.txt"
+        File summary = outputPrefix + "_summary.tar.gz"
+
+        # Array[File] mast = glob(outputPrefix + "_cluster_*_mast_input.csv")
+        File deGeneList = outputPrefix + "_de_gene_list.txt"
+
+        File preCorrectionReadArray = "pre-correction-ra.pickle"
+        File cbCorrection = outputPrefix + "_cb-correction.csv.gz"
+
+        File daskReport = "dask-report.html"
+        File? log = outputPrefix + "_seqc_log.txt"
     }
 
     runtime {
