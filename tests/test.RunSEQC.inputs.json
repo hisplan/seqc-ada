@@ -1,10 +1,10 @@
 {
     "RunSEQC.version": "0.2.7",
     "RunSEQC.assay": "ten_x_v2",
-    "RunSEQC.index": "s3://RunSEQC-public/genomes/hg38_chr19/",
-    "RunSEQC.barcodeFiles": "s3://RunSEQC-public/barcodes/ten_x_v2/flat/",
-    "RunSEQC.genomicFastq": "s3://RunSEQC-public/test/ten_x_v2/genomic/",
-    "RunSEQC.barcodeFastq": "s3://RunSEQC-public/test/ten_x_v2/barcode/",
+    "RunSEQC.index": "s3://seqc-public/genomes/hg38_chr19/",
+    "RunSEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
+    "RunSEQC.genomicFastq": "s3://seqc-public/test/ten_x_v2/genomic/",
+    "RunSEQC.barcodeFastq": "s3://seqc-public/test/ten_x_v2/barcode/",
     "RunSEQC.outputPrefix": "devtest",
     "RunSEQC.starArguments": "runRNGseed=0",
     "RunSEQC.email": "jaeyoung.chun@gmail.com"
