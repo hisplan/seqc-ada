@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="RunSEQC"
+modules="BasicAnalysis RunSEQC"
 
 usage()
 {
