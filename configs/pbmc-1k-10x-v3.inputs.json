@@ -5,6 +5,7 @@
     "SEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v3/flat/",
     "SEQC.genomicFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/",
     "SEQC.barcodeFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/",
+    "SEQC.filterMode": "scRNA-seq",
     "SEQC.outputPrefix": "devtest",
     "SEQC.starArguments": "runRNGseed=0",
     "SEQC.email": "jaeyoung.chun@gmail.com"

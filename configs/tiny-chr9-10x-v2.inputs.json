@@ -5,6 +5,8 @@
     "SEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
     "SEQC.genomicFastq": "s3://seqc-public/test/ten_x_v2/genomic/",
     "SEQC.barcodeFastq": "s3://seqc-public/test/ten_x_v2/barcode/",
+    "SEQC.filterMode": "scRNA-seq",
+    "SEQC.extraParameters": "--no-filter-low-coverage --no-filter-mitochondrial-rna",    
     "SEQC.outputPrefix": "devtest",
     "SEQC.starArguments": "runRNGseed=0",
     "SEQC.email": "jaeyoung.chun@gmail.com"
