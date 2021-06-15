@@ -55,6 +55,7 @@ workflow RunSEQC {
 
         File preCorrectionReadArray = RunSEQC.preCorrectionReadArray
         File cbCorrection = RunSEQC.cbCorrection
+        File? umiCorrection = RunSEQC.umiCorrection
 
         File daskReport = RunSEQC.daskReport
         File? log = RunSEQC.log

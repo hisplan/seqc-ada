@@ -39,9 +39,15 @@ task RunSEQC {
 
             # no-filter-low-coverage: ""
             # min-poly-t: "0"
-            
+
             # filter-mode: snRNA-seq
-            # max-insert-size: 2304700     
+            # max-insert-size: 2304700
+
+        # hack: optional output doesn't seem to be supported
+        if [ ! -r "~{outputPrefix}_umi-correction.csv.gz" ]
+        then
+            touch "~{outputPrefix}_umi-correction.csv.gz"
+        fi
 
         ls -al
     >>>
@@ -68,6 +74,7 @@ task RunSEQC {
 
         File preCorrectionReadArray = "pre-correction-ra.pickle"
         File cbCorrection = outputPrefix + "_cb-correction.csv.gz"
+        File? umiCorrection = outputPrefix + "_umi-correction.csv.gz"
 
         File daskReport = "dask-report.html"
         File? log = outputPrefix + "_seqc_log.txt"
