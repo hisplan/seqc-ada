@@ -13,9 +13,19 @@ task RunSEQC {
         String outputPrefix
         String email
 
+        String filterMode
+        Int? maxInsertSize
+        String? extraParameters
+
         Float inputSize = 250
         Int numCores = 8
         Int memoryGB = 100
+    }
+
+    parameter_meta {
+        filterMode : { help: "either scRNA-seq or snRNA-seq" }
+        maxInsertSize : { help: "for snRNA-seq, 2304700 for hg38, 4434881 for mm38" }
+        extraParameters: { help: "e.g. --no-filter-low-coverage --no-filter-mitochondrial-rna"}
     }
 
     String dockerImage = "hisplan/cromwell-seqc:" + version
@@ -32,24 +42,18 @@ task RunSEQC {
             --barcode-files ~{barcodeFiles} \
             --genomic-fastq ~{genomicFastq} \
             --barcode-fastq ~{barcodeFastq} \
+            --filter-mode ~{filterMode} ~{if defined(maxInsertSize) then '--max-insert-size ' + maxInsertSize else ''} \
+            --min-poly-t 0 ~{if defined(extraParameters) then extraParameters else ''} \
             --star-args ~{starArguments} \
             --output-prefix ~{outputPrefix} \
             --email ~{email} \
             --local --no-terminate
-
-            # no-filter-low-coverage: ""
-            # min-poly-t: "0"
-
-            # filter-mode: snRNA-seq
-            # max-insert-size: 2304700
 
         # hack: optional output doesn't seem to be supported
         if [ ! -r "~{outputPrefix}_umi-correction.csv.gz" ]
         then
             touch "~{outputPrefix}_umi-correction.csv.gz"
         fi
-
-        ls -al
     >>>
 
     output {

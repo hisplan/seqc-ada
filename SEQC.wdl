@@ -16,6 +16,10 @@ workflow SEQC {
         String genomicFastq
         String barcodeFastq
 
+        String filterMode
+        Int? maxInsertSize
+        String? extraParameters
+
         String starArguments
         String outputPrefix
         String email
@@ -29,6 +33,9 @@ workflow SEQC {
             barcodeFiles = barcodeFiles,
             genomicFastq = genomicFastq,
             barcodeFastq = barcodeFastq,
+            filterMode = filterMode,
+            maxInsertSize = maxInsertSize,
+            extraParameters = extraParameters,
             starArguments = starArguments,
             outputPrefix = outputPrefix,
             email = email
