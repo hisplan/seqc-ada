@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source version.sh
+source config.sh
 
-docker build . --tag seqc-basic-analysis:${version}
+docker build -t ${image_name}:${version} .
