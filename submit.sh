@@ -30,7 +30,7 @@ then
 fi
 
 rm -rf SEQC.deps.zip
-zip SEQC.deps.zip modules modules/*
+zip SeqcAba.deps.zip modules modules/*
 
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
