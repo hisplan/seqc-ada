@@ -1,0 +1,9 @@
+{
+    "ToAnnData.sampleName": "devtest",
+    "ToAnnData.denseMatrix": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_dense.csv",
+    "ToAnnData.sparseBarcodes": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_counts_barcodes.csv",
+    "ToAnnData.sparseGenes": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_counts_genes.csv",
+    "ToAnnData.sparseMoleculeCounts": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_molecule_counts.mtx",
+    "ToAnnData.sparseReadCounts": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_read_counts.mtx",
+    "ToAnnData.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+}
