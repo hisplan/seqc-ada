@@ -3,7 +3,7 @@
 #hack: get dependency set up
 ln -s ../modules/ modules
 
-modules="BasicAnalysis RunSEQC"
+modules="ToAnnData BasicAnalysis SEQC"
 
 for module_name in $modules
 do

@@ -2,5 +2,5 @@
 
 java -jar ~/Applications/womtool.jar \
     validate \
-    SEQC.wdl \
+    SeqcAba.wdl \
     --inputs ./configs/tiny-chr9-10x-v2.inputs.json

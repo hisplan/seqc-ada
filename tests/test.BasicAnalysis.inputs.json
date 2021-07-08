@@ -1,3 +1,6 @@
 {
-    "BasicAnalysis.path": "0.2.7"
+    "BasicAnalysis.sampleName": "devtest",
+    "BasicAnalysis.pathRawAdata": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d62ce79b-acb2-4f9c-b204-9b79024f4e16/call-ToAnnData/devtest.raw.h5ad",
+    "BasicAnalysis.pathFilteredAdata": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d62ce79b-acb2-4f9c-b204-9b79024f4e16/call-ToAnnData/devtest.filtered.h5ad",
+    "BasicAnalysis.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
 }

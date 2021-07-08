@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="BasicAnalysis RunSEQC"
+modules="ToAnnData BasicAnalysis SEQC"
 
 usage()
 {

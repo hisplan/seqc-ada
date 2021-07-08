@@ -5,12 +5,23 @@ import "modules/BasicAnalysis.wdl" as module
 workflow BasicAnalysis {
 
     input {
-        String path
+        String sampleName
+        File pathRawAdata
+        File pathFilteredAdata
+
+        # docker-related
+        String dockerRegistry
     }
 
-    call module.BasicAnalysis
+    call module.BasicAnalysis {
+        input:
+            sampleName = sampleName,
+            pathRawAdata = pathRawAdata,
+            pathFilteredAdata = pathFilteredAdata,
+            dockerRegistry = dockerRegistry
+    }
 
     output {
-        File outNotebook = BasicAnalysis.outNotebook
+        File notebook = BasicAnalysis.notebook
     }
 }

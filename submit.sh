@@ -34,8 +34,8 @@ zip SEQC.deps.zip modules modules/*
 
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl SEQC.wdl \
+    --wdl SeqcAba.wdl \
     --inputs-files ${inputs_file} \
-    --deps-file SEQC.deps.zip \
+    --deps-file SeqcAba.deps.zip \
     --label-file ${labels_file} \
     --options-file ${options_file}
