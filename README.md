@@ -1,4 +1,4 @@
-# SeqcAba
+# SEQC-ABA
 
 SEQC Automated Basic Analysis
 
