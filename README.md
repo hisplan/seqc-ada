@@ -28,7 +28,7 @@ SEQC Automated Basic Analysis
 
 `./dockers/seqc-basic-analysis`
 
-- Update the basic analysis notebook: `notebooks/template-basic-analysis.ipynb`
+- Update the basic analysis notebook: `notebooks/basic-analysis.ipynb`
 - Increment the version number: `config.sh`
 - Build the docker image: `build.sh`
 - Push the docker image to Docker Hub: `package.sh`

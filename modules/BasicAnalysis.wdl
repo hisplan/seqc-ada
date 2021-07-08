@@ -18,7 +18,7 @@ task BasicAnalysis {
         set -euo pipefail
 
         papermill \
-            /opt/template-basic-analysis.ipynb ~{sampleName}.basic-analysis.ipynb \
+            /opt/basic-analysis.ipynb ~{sampleName}.basic-analysis.ipynb \
             --parameters path_raw_adata ~{pathRawAdata} \
             --parameters path_filtered_adata ~{pathFilteredAdata} \
             --stdout-file notebook.stdout.txt
