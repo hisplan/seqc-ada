@@ -6,7 +6,7 @@
     "SeqcAba.genomicFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/",
     "SeqcAba.barcodeFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/",
     "SeqcAba.filterMode": "scRNA-seq",
-    "SeqcAba.outputPrefix": "devtest",
+    "SeqcAba.outputPrefix": "pbmc",
     "SeqcAba.starArguments": "runRNGseed=0",
     "SeqcAba.email": "jaeyoung.chun@gmail.com",
     "SeqcAba.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
