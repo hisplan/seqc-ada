@@ -29,6 +29,7 @@ task ToAnnData {
         papermill \
             /opt/to-adata.ipynb to-adata.ipynb \
             --parameters path_data data \
+            --parameters path_out . \
             --parameters sample_name ~{sampleName} \
             --stdout-file notebook.stdout.txt
     >>>
