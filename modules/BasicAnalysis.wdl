@@ -12,6 +12,7 @@ task BasicAnalysis {
     }
 
     String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.4"
+    Float inputSize = size(pathRawAdata, "GiB") + size(pathFilteredAdata, "GiB")
 
     command <<<
         set -euo pipefail
@@ -31,7 +32,7 @@ task BasicAnalysis {
     runtime {
         docker: dockerImage
         disks: "local-disk 10 HDD"
-        cpu: 1
-        memory: "4 GB"
+        cpu: 2
+        memory: "32 GB"
     }
 }
