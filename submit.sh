@@ -29,7 +29,7 @@ then
     exit 1
 fi
 
-rm -rf SEQC.deps.zip
+rm -rf SeqcAba.deps.zip
 zip SeqcAba.deps.zip modules modules/*
 
 cromwell-tools submit \
