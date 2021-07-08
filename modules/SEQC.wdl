@@ -1,6 +1,6 @@
 version 1.0
 
-task RunSEQC {
+task SEQC {
 
     input {
         String version
@@ -20,6 +20,9 @@ task RunSEQC {
         Float inputSize = 250
         Int numCores = 8
         Int memoryGB = 100
+
+        # docker-related
+        String dockerRegistry
     }
 
     parameter_meta {
@@ -28,7 +31,7 @@ task RunSEQC {
         extraParameters: { help: "e.g. --no-filter-low-coverage --no-filter-mitochondrial-rna"}
     }
 
-    String dockerImage = "hisplan/cromwell-seqc:" + version
+    String dockerImage = dockerRegistry + "/cromwell-seqc:" + version
 
     command <<<
         set -euo pipefail
@@ -69,7 +72,8 @@ task RunSEQC {
 
         File h5 = outputPrefix + ".h5"
 
-        File miniSummary = outputPrefix + "_mini_summary.pdf"
+        File miniSummaryPdf = outputPrefix + "_mini_summary.pdf"
+        File miniSummaryJson = outputPrefix + "_mini_summary.json"
         File alignmentSummary = outputPrefix + "_alignment_summary.txt"
         File summary = outputPrefix + "_summary.tar.gz"
 
@@ -78,7 +82,7 @@ task RunSEQC {
 
         File preCorrectionReadArray = "pre-correction-ra.pickle"
         File cbCorrection = outputPrefix + "_cb-correction.csv.gz"
-        File? umiCorrection = outputPrefix + "_umi-correction.csv.gz"
+        File umiCorrection = outputPrefix + "_umi-correction.csv.gz"
 
         File daskReport = "dask-report.html"
         File? log = outputPrefix + "_seqc_log.txt"
