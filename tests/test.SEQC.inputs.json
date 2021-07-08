@@ -1,0 +1,15 @@
+{
+    "SEQC.version": "0.2.7",
+    "SEQC.assay": "ten_x_v2",
+    "SEQC.index": "s3://seqc-public/genomes/hg38_chr19/",
+    "SEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
+    "SEQC.genomicFastq": "s3://seqc-public/test/ten_x_v2/genomic/",
+    "SEQC.barcodeFastq": "s3://seqc-public/test/ten_x_v2/barcode/",
+    "SEQC.filterMode": "scRNA-seq",
+    "SEQC.extraParameters": "--no-filter-low-coverage --no-filter-mitochondrial-rna",    
+    "SEQC.maxInsertSize": 2304700,
+    "SEQC.outputPrefix": "devtest",
+    "SEQC.starArguments": "runRNGseed=0",
+    "SEQC.email": "jaeyoung.chun@gmail.com",
+    "SEQC.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+}
