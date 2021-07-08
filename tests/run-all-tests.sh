@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="ToAnnData BasicAnalysis SEQC"
+modules="scCB2 ToAnnData BasicAnalysis SEQC"
 
 usage()
 {

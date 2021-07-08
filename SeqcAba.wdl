@@ -2,6 +2,7 @@ version 1.0
 
 import "modules/SEQC.wdl" as SEQC
 import "modules/ToAnnData.wdl" as ToAnnData
+import "modules/scCB2.wdl" as scCB2
 import "modules/BasicAnalysis.wdl" as BasicAnalysis
 
 workflow SeqcAba {
@@ -58,6 +59,15 @@ workflow SeqcAba {
             dockerRegistry = dockerRegistry
     }
 
+    call scCB2.scCB2 {
+        input:
+            sampleName = outputPrefix,
+            sparseBarcodes = SEQC.sparseBarcodes,
+            sparseGenes = SEQC.sparseGenes,
+            sparseMoleculeCounts = SEQC.sparseMoleculeCounts,
+            dockerRegistry = dockerRegistry
+    }
+
     call BasicAnalysis.BasicAnalysis {
         input:
             sampleName = outputPrefix,
@@ -85,6 +95,8 @@ workflow SeqcAba {
 
         File daskReport = SEQC.daskReport
         File? log = SEQC.log
+
+        File realCells = scCB2.realCells
 
         File rawH5ad = ToAnnData.rawH5ad
         File filteredH5ad = ToAnnData.filteredH5ad
