@@ -15,6 +15,7 @@ task ToAnnData {
     }
 
     String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.4"
+    Float inputSize = size(denseMatrix, "GiB") + size(sparseBarcodes, "GiB") + size(sparseGenes, "GiB") + size(sparseMoleculeCounts, "GiB")  + size(sparseReadCounts, "GiB")
 
     command <<<
         set -euo pipefail
