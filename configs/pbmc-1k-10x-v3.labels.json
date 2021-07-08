@@ -1,9 +1,9 @@
 {
-    "pipelineType": "SEQC",
+    "pipelineType": "SeqcAba",
     "project": "Dev",
     "sample": "PBMC 1K 10x v3",
     "owner": "chunj",
-    "destination": "s3://dp-lab-batch/outputs/SEQC",
+    "destination": "s3://dp-lab-gwf-core/SeqcAba/pbmc-1k-10x-v3",
     "transfer": "skip",
-    "comment": "SEQC Pipeline"
+    "comment": "SEQC Automated Basic Analysis"
 }

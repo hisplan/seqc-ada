@@ -1,9 +1,9 @@
 {
-    "pipelineType": "SEQC",
+    "pipelineType": "SeqcAba",
     "project": "Dev",
     "sample": "Tiny Chr9 10x v2",
     "owner": "chunj",
-    "destination": "s3://dp-lab-batch/outputs/SEQC",
+    "destination": "s3://dp-lab-batch/SeqcAba/tiny-chr9-10x-v2",
     "transfer": "skip",
-    "comment": "SEQC Pipeline"
+    "comment": "SEQC Automated Basic Analysis"
 }
