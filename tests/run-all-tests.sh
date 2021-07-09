@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="scCB2 ToAnnData BasicAnalysis SEQC"
+modules="DoubletDetection scCB2 ToAnnData BasicAnalysis SEQC"
 
 usage()
 {

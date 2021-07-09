@@ -3,6 +3,7 @@ version 1.0
 import "modules/SEQC.wdl" as SEQC
 import "modules/ToAnnData.wdl" as ToAnnData
 import "modules/scCB2.wdl" as scCB2
+import "modules/DoubletDetection.wdl" as DoubletDetection
 import "modules/BasicAnalysis.wdl" as BasicAnalysis
 
 workflow SeqcAba {
@@ -65,6 +66,13 @@ workflow SeqcAba {
             sparseBarcodes = SEQC.sparseBarcodes,
             sparseGenes = SEQC.sparseGenes,
             sparseMoleculeCounts = SEQC.sparseMoleculeCounts,
+            dockerRegistry = dockerRegistry
+    }
+
+    call DoubletDetection.DoubletDetection {
+        input:
+            sampleName = outputPrefix,
+            countMatrixH5ad = ToAnnData.filteredH5ad,
             dockerRegistry = dockerRegistry
     }
 
