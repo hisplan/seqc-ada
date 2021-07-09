@@ -29,9 +29,6 @@ then
     exit 1
 fi
 
-rm -rf SeqcAba.deps.zip
-zip SeqcAba.deps.zip modules modules/*
-
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
     --wdl SeqcAba.wdl \

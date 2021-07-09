@@ -31,4 +31,4 @@ SEQC Automated Basic Analysis
 - Update the basic analysis notebook: `notebooks/basic-analysis.ipynb`
 - Increment the version number: `config.sh`
 - Build the docker image: `build.sh`
-- Push the docker image to Docker Hub: `package.sh`
+- Push the docker image to Amazon ECR: `package.sh`
