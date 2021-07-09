@@ -37,7 +37,11 @@ task SEQC {
         set -euo pipefail
 
         # `--local` still requires AWS region to be speicifed
+        # set dummy region
         export AWS_DEFAULT_REGION=us-east-1
+
+        # set max number of workers for UMI correction task
+        export SEQC_MAX_WORKERS=~{numCores}
 
         # run locally and do not terminate
         SEQC run ~{assay} \
@@ -57,6 +61,8 @@ task SEQC {
         then
             touch "~{outputPrefix}_umi-correction.csv.gz"
         fi
+
+        find .
     >>>
 
     output {
