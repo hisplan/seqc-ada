@@ -11,7 +11,7 @@ task BasicAnalysis {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.5"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.6"
     Float inputSize = size(pathRawAdata, "GiB") + size(pathFilteredAdata, "GiB")
 
     command <<<
@@ -31,7 +31,7 @@ task BasicAnalysis {
 
     runtime {
         docker: dockerImage
-        disks: "local-disk 10 HDD"
+        disks: "local-disk " + ceil(2 * (if inputSize < 1 then 10 else inputSize)) + " HDD"
         cpu: 2
         memory: "32 GB"
     }
