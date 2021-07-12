@@ -12,6 +12,8 @@ workflow ToAnnData {
         File sparseMoleculeCounts
         File sparseReadCounts
 
+        Int memoryGB
+
         # docker-related
         String dockerRegistry
     }
@@ -24,6 +26,7 @@ workflow ToAnnData {
             sparseGenes = sparseGenes,
             sparseMoleculeCounts = sparseMoleculeCounts,
             sparseReadCounts = sparseReadCounts,
+            memoryGB = memoryGB,
             dockerRegistry = dockerRegistry
     }
 

@@ -10,11 +10,13 @@ task ToAnnData {
         File sparseMoleculeCounts
         File sparseReadCounts
 
+        Int memoryGB
+
         # docker-related
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.6"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.7"
     Float inputSize = size(denseMatrix, "GiB") + size(sparseBarcodes, "GiB") + size(sparseGenes, "GiB") + size(sparseMoleculeCounts, "GiB")  + size(sparseReadCounts, "GiB")
 
     command <<<
@@ -45,6 +47,6 @@ task ToAnnData {
         docker: dockerImage
         disks: "local-disk 10 HDD"
         cpu: 1
-        memory: "32 GB"
+        memory: memoryGB + " GB"
     }
 }
