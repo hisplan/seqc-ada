@@ -1,0 +1,10 @@
+{
+    "CellBender.sampleName": "devtest",
+    "CellBender.features": "s3://dp-lab-gwf-core/outputs/CellRangerGex/Foxp3_minus/outs/raw_feature_bc_matrix/features.tsv.gz",
+    "CellBender.barcodes": "s3://dp-lab-gwf-core/outputs/CellRangerGex/Foxp3_minus/outs/raw_feature_bc_matrix/barcodes.tsv.gz",
+    "CellBender.matrix": "s3://dp-lab-gwf-core/outputs/CellRangerGex/Foxp3_minus/outs/raw_feature_bc_matrix/matrix.mtx.gz",
+    "CellBender.cuda": false,
+    "CellBender.expectedCells": 5000,
+    "CellBender.fpr": 0.01,
+    "CellBender.epochs": 3
+}
