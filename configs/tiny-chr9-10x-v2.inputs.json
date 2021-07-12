@@ -3,12 +3,16 @@
     "SeqcAba.assay": "ten_x_v2",
     "SeqcAba.index": "s3://seqc-public/genomes/hg38_chr19/",
     "SeqcAba.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
-    "SeqcAba.genomicFastq": "s3://seqc-public/test/ten_x_v2/genomic/",
-    "SeqcAba.barcodeFastq": "s3://seqc-public/test/ten_x_v2/barcode/",
+    "SeqcAba.fastqGenomic": [
+        "s3://seqc-public/test/ten_x_v2/genomic/ten_x_v2_R2.fastq.gz"
+    ],
+    "SeqcAba.fastqBarcode": [
+        "s3://seqc-public/test/ten_x_v2/barcode/ten_x_v2_R1.fastq.gz"
+    ],
     "SeqcAba.filterMode": "scRNA-seq",
-    "SeqcAba.extraParameters": "--no-filter-low-coverage --no-filter-mitochondrial-rna",
+    "SeqcAba.extraParameters": "--no-filter-low-coverage --no-filter-mitochondrial-rna --debug",
     "SeqcAba.outputPrefix": "devtest",
     "SeqcAba.starArguments": "runRNGseed=0",
     "SeqcAba.email": "jaeyoung.chun@gmail.com",
-    "SeqcAba.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "SeqcAba.dockerRegistry": "hisplan"
 }
