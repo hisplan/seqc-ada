@@ -1,0 +1,7 @@
+{
+    "FastQC.fastqFiles": [
+        "s3://seqc-public/test/ten_x_v2/genomic/ten_x_v2_R2.fastq.gz",
+        "s3://seqc-public/test/ten_x_v2/barcode/ten_x_v2_R1.fastq.gz"
+    ],
+    "FastQC.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+}
