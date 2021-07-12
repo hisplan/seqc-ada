@@ -1,14 +1,19 @@
 {
-    "SEQC.version": "0.2.7",
-    "SEQC.assay": "ten_x_v2",
-    "SEQC.index": "s3://seqc-public/genomes/hg38_chr19/",
-    "SEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
-    "SEQC.genomicFastq": "s3://seqc-public/test/ten_x_v2/genomic/",
-    "SEQC.barcodeFastq": "s3://seqc-public/test/ten_x_v2/barcode/",
+    "SEQC.version": "0.2.9",
+    "SEQC.assay": "ten_x_v3",
+    "SEQC.index": "s3://seqc-public/genomes/hg38_long_polya/",
+    "SEQC.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v3/flat/",
+    "SEQC.fastqGenomic": [
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/pbmc_1k_v3_S1_L001_R2_001.fastq.gz",
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/pbmc_1k_v3_S1_L002_R2_001.fastq.gz"
+    ],
+    "SEQC.fastqBarcode": [
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/pbmc_1k_v3_S1_L001_R1_001.fastq.gz",
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/pbmc_1k_v3_S1_L002_R1_001.fastq.gz"
+    ],
     "SEQC.filterMode": "scRNA-seq",
-    "SEQC.extraParameters": "--no-filter-low-coverage --no-filter-mitochondrial-rna",    
-    "SEQC.maxInsertSize": 2304700,
-    "SEQC.outputPrefix": "devtest",
+    "SEQC.extraParameters": "--no-filter-low-coverage --debug",
+    "SEQC.outputPrefix": "pbmc1k",
     "SEQC.starArguments": "runRNGseed=0",
     "SEQC.email": "jaeyoung.chun@gmail.com",
     "SEQC.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"

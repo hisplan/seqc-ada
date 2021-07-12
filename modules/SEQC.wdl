@@ -7,8 +7,8 @@ task SEQC {
         String assay
         String index
         String barcodeFiles
-        String genomicFastq
-        String barcodeFastq
+        Array[File] fastqGenomic
+        Array[File] fastqBarcode
         String starArguments
         String outputPrefix
         String email
@@ -18,7 +18,7 @@ task SEQC {
         String? extraParameters
 
         Float inputSize = 250
-        Int numCores = 8
+        Int numCores = 4
         Int memoryGB = 100
 
         # docker-related
@@ -36,6 +36,20 @@ task SEQC {
     command <<<
         set -euo pipefail
 
+        # aggregate all the genomic fastq files into a single directory
+        mkdir -p fastq-genomic
+        for file in "~{sep=' ' fastqGenomic}"
+        do
+            mv -v ${file} ./fastq-genomic/
+        done
+
+        # aggregate all the barcode fastq files into a single directory
+        mkdir -p fastq-barcode
+        for file in "~{sep=' ' fastqBarcode}"
+        do
+            mv -v ${file} ./fastq-barcode/
+        done
+
         # `--local` still requires AWS region to be speicifed
         # set dummy region
         export AWS_DEFAULT_REGION=us-east-1
@@ -47,8 +61,8 @@ task SEQC {
         SEQC run ~{assay} \
             --index ~{index} \
             --barcode-files ~{barcodeFiles} \
-            --genomic-fastq ~{genomicFastq} \
-            --barcode-fastq ~{barcodeFastq} \
+            --genomic-fastq ./fastq-genomic/ \
+            --barcode-fastq ./fastq-barcode/ \
             --filter-mode ~{filterMode} ~{if defined(maxInsertSize) then '--max-insert-size ' + maxInsertSize else ''} \
             --min-poly-t 0 ~{if defined(extraParameters) then extraParameters else ''} \
             --star-args ~{starArguments} \
@@ -83,7 +97,7 @@ task SEQC {
         File alignmentSummary = outputPrefix + "_alignment_summary.txt"
         File summary = outputPrefix + "_summary.tar.gz"
 
-        # Array[File] mast = glob(outputPrefix + "_cluster_*_mast_input.csv")
+        Array[File] mast = glob(outputPrefix + "_cluster_*_mast_input.csv")
         File deGeneList = outputPrefix + "_de_gene_list.txt"
 
         File preCorrectionReadArray = "pre-correction-ra.pickle"

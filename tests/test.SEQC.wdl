@@ -13,8 +13,8 @@ workflow SEQC {
         # no localization required
         String index
         String barcodeFiles
-        String genomicFastq
-        String barcodeFastq
+        Array[File] fastqGenomic
+        Array[File] fastqBarcode
 
         String filterMode
         Int? maxInsertSize
@@ -34,8 +34,8 @@ workflow SEQC {
             assay = assay,
             index = index,
             barcodeFiles = barcodeFiles,
-            genomicFastq = genomicFastq,
-            barcodeFastq = barcodeFastq,
+            fastqGenomic = fastqGenomic,
+            fastqBarcode = fastqBarcode,
             filterMode = filterMode,
             maxInsertSize = maxInsertSize,
             extraParameters = extraParameters,
@@ -63,6 +63,7 @@ workflow SEQC {
         File alignmentSummary = SEQC.alignmentSummary
         File summary = SEQC.summary
 
+        Array[File] mast = SEQC.mast
         File deGeneList = SEQC.deGeneList
 
         File preCorrectionReadArray = SEQC.preCorrectionReadArray
