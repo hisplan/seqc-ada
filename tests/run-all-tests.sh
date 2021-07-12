@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="DoubletDetection scCB2 ToAnnData BasicAnalysis SEQC"
+modules="FastQC Utilities CellBender DoubletDetection scCB2 ToAnnData BasicAnalysis SEQC"
 
 usage()
 {
