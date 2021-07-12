@@ -1,0 +1,6 @@
+{
+    "Utilities.fastqcZip": "s3://dp-lab-gwf-core/cromwell-execution/FastQC/ca013478-53b7-4cab-9c40-4f57ef4f4281/call-FastQC/shard-0/2727_NEPs_IGO_12109_46_S25_L003_R1_001_fastqc.zip",
+    "Utilities.seqcMiniSummary": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/c5f0c590-b860-4622-b0a7-60bf0be1e79e/call-SEQC/pbmc1k_mini_summary.json",
+    "Utilities.sparseBarcodes": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/044d7b58-98cc-405f-88c5-f8c58089b97f/call-SEQC/pbmc_sparse_counts_barcodes.csv",
+    "Utilities.sparseGenes": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/044d7b58-98cc-405f-88c5-f8c58089b97f/call-SEQC/pbmc_sparse_counts_genes.csv"
+}
