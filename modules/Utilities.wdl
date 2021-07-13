@@ -34,6 +34,53 @@ task GetNumOfReads {
     }
 }
 
+task GetTotalReads {
+
+    input {
+        Array[File] fastqcZip
+    }
+
+    parameter_meta {
+        fastqcZip : { help: "a list of zip files produced by FASTQC" }
+    }
+
+    command <<<
+        set -euo pipefail
+
+        # fixme: use ubuntu image with unzip preinstalled
+        apt-get update -y
+        apt-get install -y unzip
+
+        # create a file, ensure nothing in it
+        touch n_reads.txt
+        truncate -s 0 n_reads.txt
+
+        # get number of reads of each fastqc zip file
+        for filename in ~{sep=' ' fastqcZip}
+        do
+            # unzip
+            unzip -o ${filename}
+            # remove the .zip extension
+            fastqc_data_file="$(basename -s .zip $filename)/fastqc_data.txt"
+            # get number of reads
+            grep "Total Sequences" ${fastqc_data_file} | awk -F'\t' '{ print $2 }' >> n_reads.txt
+        done
+
+        # sum up reads
+        awk '{ n += $1 }; END { print n }' n_reads.txt > total_reads.txt
+    >>>
+
+    output {
+        Int totalReads = read_int("total_reads.txt")
+    }
+
+    runtime {
+        docker: "ubuntu:20.04"
+        cpu: 1
+        memory: "1 GB"
+    }
+}
+
 task GetNumOfCells {
 
     input {

@@ -5,13 +5,18 @@ import "modules/Utilities.wdl" as module
 workflow Utilities {
 
     input {
-        File fastqcZip
+        Array[File] fastqcZip
         File seqcMiniSummary
         File sparseBarcodes
         File sparseGenes
     }
 
     call module.GetNumOfReads {
+        input:
+            fastqcZip = fastqcZip[0]
+    }
+
+    call module.GetTotalReads {
         input:
             fastqcZip = fastqcZip
     }
@@ -23,7 +28,7 @@ workflow Utilities {
 
     call module.CalcSeqcRequiredMemory {
         input:
-            numOfReads = GetNumOfReads.numOfReads
+            numOfReads = GetTotalReads.totalReads
     }
 
     call module.CalcRawCountMatrixMemory {
@@ -34,6 +39,7 @@ workflow Utilities {
 
     output {
         Int numOfReads = GetNumOfReads.numOfReads
+        Int totalReads = GetTotalReads.totalReads
         Int numOfCells = GetNumOfCells.numOfCells
         Int memorySeqcGB = CalcSeqcRequiredMemory.memoryGB
         Int memoryRawCountMatrix = CalcRawCountMatrixMemory.memoryGB
