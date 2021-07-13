@@ -3,11 +3,17 @@
     "SeqcAba.assay": "ten_x_v3",
     "SeqcAba.index": "s3://seqc-public/genomes/hg38_long_polya/",
     "SeqcAba.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v3/flat/",
-    "SeqcAba.genomicFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/",
-    "SeqcAba.barcodeFastq": "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/",
+    "SeqcAba.fastqGenomic": [
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/pbmc_1k_v3_S1_L001_R2_001.fastq.gz",
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/genomic/pbmc_1k_v3_S1_L002_R2_001.fastq.gz"
+    ],
+    "SeqcAba.fastqBarcode": [
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/pbmc_1k_v3_S1_L001_R1_001.fastq.gz",
+        "s3://dp-lab-test/seqc/datasets/PBMC-1k-10x-v3/barcode/pbmc_1k_v3_S1_L002_R1_001.fastq.gz"
+    ],
     "SeqcAba.filterMode": "scRNA-seq",
-    "SeqcAba.outputPrefix": "pbmc",
+    "SeqcAba.outputPrefix": "pbmc_1k",
     "SeqcAba.starArguments": "runRNGseed=0",
     "SeqcAba.email": "jaeyoung.chun@gmail.com",
-    "SeqcAba.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "SeqcAba.dockerRegistry": "hisplan"
 }
