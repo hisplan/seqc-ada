@@ -9,6 +9,8 @@ workflow BasicAnalysis {
         File pathRawAdata
         File pathFilteredAdata
 
+        Int memoryGB
+
         # docker-related
         String dockerRegistry
     }
@@ -18,6 +20,7 @@ workflow BasicAnalysis {
             sampleName = sampleName,
             pathRawAdata = pathRawAdata,
             pathFilteredAdata = pathFilteredAdata,
+            memoryGB = memoryGB,
             dockerRegistry = dockerRegistry
     }
 

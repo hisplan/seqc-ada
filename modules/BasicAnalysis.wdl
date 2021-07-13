@@ -7,6 +7,8 @@ task BasicAnalysis {
         File pathRawAdata
         File pathFilteredAdata
 
+        Int memoryGB
+
         # docker-related
         String dockerRegistry
     }
@@ -33,6 +35,6 @@ task BasicAnalysis {
         docker: dockerImage
         disks: "local-disk " + ceil(2 * (if inputSize < 1 then 10 else inputSize)) + " HDD"
         cpu: 2
-        memory: "32 GB"
+        memory: memoryGB + " GB"
     }
 }

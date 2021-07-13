@@ -2,5 +2,6 @@
     "BasicAnalysis.sampleName": "devtest",
     "BasicAnalysis.pathRawAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/48ec5aa8-1acb-473b-8e75-b1af2fbc5be0/call-ToAnnData/pbmc.raw.h5ad",
     "BasicAnalysis.pathFilteredAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/48ec5aa8-1acb-473b-8e75-b1af2fbc5be0/call-ToAnnData/pbmc.filtered.h5ad",
-    "BasicAnalysis.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "BasicAnalysis.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com",
+    "BasicAnalysis.memoryGB": 32
 }
