@@ -54,16 +54,19 @@ workflow SeqcAba {
     }
 
     # use one of the fastq to get the number of reads
-    call Utilities.GetNumOfReads {
+    call Utilities.GetTotalReads {
         input:
-            fastqcZip = FastQCGenomic.outZip[0]
+            fastqcZip = FastQCGenomic.outZip
     }
 
     # calculate memory required for SEQC based on num of reads
     call Utilities.CalcSeqcRequiredMemory {
         input:
-            numOfReads = GetNumOfReads.numOfReads
+            numOfReads = GetTotalReads.totalReads
     }
+
+    # Int? memoryGB
+    # memoryGB if defined(memoryGB) else CalcSeqcRequiredMemory.memoryGB
 
     call SEQC.SEQC {
         input:
@@ -123,6 +126,7 @@ workflow SeqcAba {
             sampleName = outputPrefix,
             pathRawAdata = ToAnnData.rawH5ad,
             pathFilteredAdata = ToAnnData.filteredH5ad,
+            memoryGB = ceil(CalcRawCountMatrixMemory.memoryGB * 1.5),
             dockerRegistry = dockerRegistry
     }
 
