@@ -38,17 +38,11 @@ task SEQC {
 
         # aggregate all the genomic fastq files into a single directory
         mkdir -p fastq-genomic
-        for file in "~{sep=' ' fastqGenomic}"
-        do
-            mv -v ${file} ./fastq-genomic/
-        done
+        mv -v ~{sep=' ' fastqGenomic} ./fastq-genomic/
 
         # aggregate all the barcode fastq files into a single directory
         mkdir -p fastq-barcode
-        for file in "~{sep=' ' fastqBarcode}"
-        do
-            mv -v ${file} ./fastq-barcode/
-        done
+        mv -v ~{sep=' ' fastqBarcode} ./fastq-barcode/
 
         # `--local` still requires AWS region to be speicifed
         # set dummy region
