@@ -1,4 +1,4 @@
-version="0.0.7"
+version="0.0.8"
 
 # docker related
 registry="583643567512.dkr.ecr.us-east-1.amazonaws.com"
