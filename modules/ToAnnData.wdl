@@ -16,7 +16,7 @@ task ToAnnData {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.7"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.8"
     Float inputSize = size(denseMatrix, "GiB") + size(sparseBarcodes, "GiB") + size(sparseGenes, "GiB") + size(sparseMoleculeCounts, "GiB")  + size(sparseReadCounts, "GiB")
 
     command <<<
@@ -34,13 +34,14 @@ task ToAnnData {
             --parameters path_data data \
             --parameters path_out . \
             --parameters sample_name ~{sampleName} \
-            --stdout-file notebook.stdout.txt
+            --stdout-file to-adata.stdout.txt \
+            --log-output
     >>>
 
     output {
         File filteredH5ad = sampleName + ".filtered.h5ad"
         File rawH5ad = sampleName + ".raw.h5ad"
-        File notebookStdout = "notebook.stdout.txt"
+        File notebookStdout = "to-adata.stdout.txt"
     }
 
     runtime {
