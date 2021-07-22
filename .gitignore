@@ -1,2 +1,5 @@
 .DS_Store
 .ipynb_checkpoints
+__pycache_
+*.pyc
+dockers/seqc-basic-analysis/notebooks/outputs
