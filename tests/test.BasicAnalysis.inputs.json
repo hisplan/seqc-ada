@@ -1,7 +1,8 @@
 {
-    "BasicAnalysis.sampleName": "devtest",
-    "BasicAnalysis.pathRawAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/48ec5aa8-1acb-473b-8e75-b1af2fbc5be0/call-ToAnnData/pbmc.raw.h5ad",
-    "BasicAnalysis.pathFilteredAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/48ec5aa8-1acb-473b-8e75-b1af2fbc5be0/call-ToAnnData/pbmc.filtered.h5ad",
-    "BasicAnalysis.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com",
-    "BasicAnalysis.memoryGB": 32
+    "BasicAnalysis.sampleName": "pbmc_1k_devtest",
+    "BasicAnalysis.pathRawAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/072c1c1c-f0c7-4c3b-9aed-9709428a7c4b/call-ToAnnData/pbmc_1k.raw.h5ad",
+    "BasicAnalysis.pathFilteredAdata": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/072c1c1c-f0c7-4c3b-9aed-9709428a7c4b/call-ToAnnData/pbmc_1k.filtered.h5ad",
+    "BasicAnalysis.memoryGB": 41,
+    "BasicAnalysis.numCpus": 2,
+    "BasicAnalysis.dockerRegistry": "hisplan"
 }

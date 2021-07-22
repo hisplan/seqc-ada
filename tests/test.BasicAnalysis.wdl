@@ -9,6 +9,7 @@ workflow BasicAnalysis {
         File pathRawAdata
         File pathFilteredAdata
 
+        Int numCpus
         Int memoryGB
 
         # docker-related
@@ -20,11 +21,15 @@ workflow BasicAnalysis {
             sampleName = sampleName,
             pathRawAdata = pathRawAdata,
             pathFilteredAdata = pathFilteredAdata,
+            numCpus = numCpus,
             memoryGB = memoryGB,
             dockerRegistry = dockerRegistry
     }
 
     output {
         File notebook = BasicAnalysis.notebook
+        File normalizedH5ad = BasicAnalysis.normalizedH5ad
+        File visualizedH5ad = BasicAnalysis.visualizedH5ad
+        File notebookStdout = BasicAnalysis.notebookStdout
     }
 }
