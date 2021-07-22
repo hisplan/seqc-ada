@@ -167,7 +167,10 @@ task CalcRawCountMatrixMemory {
         n_genes=`wc -l < ~{sparseGenes}`
 
         python - << EOF
+        # cell * gene * 8 bytes (int64)
         mem_gb = int(${n_barcodes} * ${n_genes} * 8 / 1024 / 1024 / 1024)
+        # minimum 1GB
+        mem_gb = max(mem_gb, 1)
         print(mem_gb)
         EOF
     >>>
