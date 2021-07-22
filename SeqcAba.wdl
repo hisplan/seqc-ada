@@ -31,6 +31,8 @@ workflow SeqcAba {
         String outputPrefix
         String email
 
+        Int? memoryGBSeqc
+
         # docker-related
         String dockerRegistry
     }
@@ -65,9 +67,6 @@ workflow SeqcAba {
             numOfReads = GetTotalReads.totalReads
     }
 
-    # Int? memoryGB
-    # memoryGB if defined(memoryGB) else CalcSeqcRequiredMemory.memoryGB
-
     call SEQC.SEQC {
         input:
             version = version,
@@ -81,7 +80,7 @@ workflow SeqcAba {
             extraParameters = extraParameters,
             starArguments = starArguments,
             outputPrefix = outputPrefix,
-            memoryGB = CalcSeqcRequiredMemory.memoryGB,
+            memoryGB = if defined(memoryGBSeqc) then memoryGBSeqc else CalcSeqcRequiredMemory.memoryGB,
             email = email,
             dockerRegistry = dockerRegistry
     }
@@ -162,9 +161,11 @@ workflow SeqcAba {
         File doublets = DoubletDetection.doublets
         File doubletScore = DoubletDetection.doubletScore
 
-        # notebook
+        # analysis notebook and *.h5ad
         File rawH5ad = ToAnnData.rawH5ad
         File filteredH5ad = ToAnnData.filteredH5ad
+        File normalizedH5ad = BasicAnalysis.normalizedH5ad
+        File visualizedH5ad = BasicAnalysis.visualizedH5ad
         File notebook = BasicAnalysis.notebook
     }
 }
