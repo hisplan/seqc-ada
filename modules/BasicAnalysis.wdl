@@ -8,7 +8,7 @@ task BasicAnalysis {
         File pathFilteredAdata
 
         String templateNotebook = "basic-analysis-v1.ipynb"
-        String ribosomeGeneList = "RB_genes_human.txt"
+        String ribosomeGeneList = "RB_genes_human_including_GM_genes.txt"
         Int numCpus = 4
         Int memoryGB
 
@@ -16,7 +16,7 @@ task BasicAnalysis {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.8"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.9"
     Float inputSize = size(pathRawAdata, "GiB") + size(pathFilteredAdata, "GiB")
 
     String path_outdir = "outputs"

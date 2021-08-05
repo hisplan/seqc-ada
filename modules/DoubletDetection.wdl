@@ -11,7 +11,7 @@ task DoubletDetection {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.8"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.9"
     Int nThreads = 8
     Float inputSize = size(countMatrixH5ad, "GiB")
 

@@ -16,7 +16,7 @@ task ToAnnData {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.8"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.9"
     Float inputSize = size(denseMatrix, "GiB") + size(sparseBarcodes, "GiB") + size(sparseGenes, "GiB") + size(sparseMoleculeCounts, "GiB")  + size(sparseReadCounts, "GiB")
 
     command <<<
