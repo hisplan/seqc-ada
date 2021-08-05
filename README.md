@@ -4,7 +4,9 @@ SEQC Ada (AutomateD Analysis)
 
 Ada is considered to be the first computer programmer and her method has been called the world's first computer program.
 
-## Tiny Chromosome 9 10x v2
+## Testing
+
+### Tiny Chromosome 9 10x v2
 
 ```bash
 ./submit.sh \
@@ -14,7 +16,7 @@ Ada is considered to be the first computer programmer and her method has been ca
     -o SeqcAda.options.aws.json
 ```
 
-## PBMC 1K 10x v3
+### PBMC 1K 10x v3
 
 ```bash
 ./submit.sh \
@@ -30,7 +32,7 @@ Ada is considered to be the first computer programmer and her method has been ca
 
 `./dockers/seqc-basic-analysis`
 
-- Update the basic analysis notebook: `notebooks/basic-analysis.ipynb`
+- Update the basic analysis notebook: `notebooks/basic-analysis-v*.ipynb`,
 - Increment the version number: `config.sh`
 - Build the docker image: `build.sh`
-- Push the docker image to Amazon ECR: `package.sh`
+- Push the docker image to docker registry: `push.sh`
