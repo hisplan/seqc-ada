@@ -20,7 +20,7 @@ Ada is considered to be the first computer programmer and her method has been ca
 
 ```bash
 ./submit.sh \
-    -k ~/keys/secrets-aws.json \
+    -k ~/keys/cromwell-secrets-aws-nvirginia.json \
     -i configs/pbmc-1k-10x-v3.inputs.json \
     -l configs/pbmc-1k-10x-v3.labels.json \
     -o SeqcAda.options.aws.json
