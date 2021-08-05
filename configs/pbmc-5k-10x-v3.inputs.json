@@ -19,5 +19,5 @@
     "SeqcAda.outputPrefix": "pbmc_5k",
     "SeqcAda.starArguments": "runRNGseed=0",
     "SeqcAda.email": "jaeyoung.chun@gmail.com",
-    "SeqcAda.dockerRegistry": "hisplan"
+    "SeqcAda.dockerRegistry": "quay.io/hisplan"
 }
