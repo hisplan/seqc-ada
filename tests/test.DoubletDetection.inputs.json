@@ -1,6 +1,6 @@
 {
     "DoubletDetection.sampleName": "devtest",
-    "DoubletDetection.countMatrixH5ad": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAba/581f77b0-19ec-4255-a445-1670d9516081/call-ToAnnData/devtest.raw.h5ad",
+    "DoubletDetection.countMatrixH5ad": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAda/581f77b0-19ec-4255-a445-1670d9516081/call-ToAnnData/devtest.raw.h5ad",
     "DoubletDetection.voterThreshold": 0.5,
     "DoubletDetection.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
 }

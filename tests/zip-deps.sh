@@ -1,6 +1,6 @@
 #!/bin/bash
 
 cd ..
-rm -rf SeqcAba.deps.zip
-zip SeqcAba.deps.zip modules modules/*
+rm -rf SeqcAda.deps.zip
+zip SeqcAda.deps.zip modules modules/*
 cd -
