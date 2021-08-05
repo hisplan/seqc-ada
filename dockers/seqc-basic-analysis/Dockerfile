@@ -14,4 +14,4 @@ COPY ./notebooks/basic-analysis-v*.ipynb /opt/
 COPY ./notebooks/to-adata.ipynb /opt/
 COPY ./notebooks/doublet-detection.ipynb /opt/
 COPY ./notebooks/get_optimal_k.py /opt/
-COPY ./notebooks/RB_genes_human.txt /opt/
+COPY ./notebooks/RB_genes_*.txt /opt/
