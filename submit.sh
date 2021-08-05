@@ -31,8 +31,8 @@ fi
 
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl SeqcAba.wdl \
+    --wdl SeqcAda.wdl \
     --inputs-files ${inputs_file} \
-    --deps-file SeqcAba.deps.zip \
+    --deps-file SeqcAda.deps.zip \
     --label-file ${labels_file} \
     --options-file ${options_file}

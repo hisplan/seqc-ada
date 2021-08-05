@@ -8,7 +8,7 @@ import "modules/DoubletDetection.wdl" as DoubletDetection
 import "modules/BasicAnalysis.wdl" as BasicAnalysis
 import "modules/Utilities.wdl" as Utilities
 
-workflow SeqcAba {
+workflow SeqcAda {
 
     input {
         String version
