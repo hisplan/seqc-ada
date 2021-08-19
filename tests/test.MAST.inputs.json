@@ -1,0 +1,4 @@
+{
+    "MAST.h5ad": "s3://dp-lab-test/MAST/processed_data.h5ad",
+    "MAST.dockerRegistry": "quay.io/hisplan"
+}

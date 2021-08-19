@@ -29,7 +29,6 @@ workflow BasicAnalysis {
     output {
         File notebook = BasicAnalysis.notebook
         File normalizedH5ad = BasicAnalysis.normalizedH5ad
-        File visualizedH5ad = BasicAnalysis.visualizedH5ad
         File notebookStdout = BasicAnalysis.notebookStdout
     }
 }

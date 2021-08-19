@@ -6,6 +6,7 @@ import "modules/ToAnnData.wdl" as ToAnnData
 import "modules/scCB2.wdl" as scCB2
 import "modules/DoubletDetection.wdl" as DoubletDetection
 import "modules/BasicAnalysis.wdl" as BasicAnalysis
+import "modules/MAST.wdl" as MAST
 import "modules/Utilities.wdl" as Utilities
 
 workflow SeqcAda {
@@ -129,6 +130,13 @@ workflow SeqcAda {
             dockerRegistry = dockerRegistry
     }
 
+    call MAST.MAST {
+        input:
+            h5ad = BasicAnalysis.normalizedH5ad,
+            clusterObsName = "Clusters",
+            dockerRegistry = dockerRegistry
+    }
+
     output {
 
         # QC
@@ -146,8 +154,8 @@ workflow SeqcAda {
         File alignmentSummary = SEQC.alignmentSummary
         File summary = SEQC.summary
 
-        Array[File] mast = SEQC.mast
-        File deGeneList = SEQC.deGeneList
+        # Array[File] mast = SEQC.mast
+        # File deGeneList = SEQC.deGeneList
 
         File preCorrectionReadArray = SEQC.preCorrectionReadArray
         File cbCorrection = SEQC.cbCorrection
@@ -156,16 +164,16 @@ workflow SeqcAda {
         File daskReport = SEQC.daskReport
         File? log = SEQC.log
 
-        # scCB2, DoubletDetection
+        # scCB2, DoubletDetection, MAST
         File realCells = scCB2.realCells
         File doublets = DoubletDetection.doublets
         File doubletScore = DoubletDetection.doubletScore
+        Array[File] mast = MAST.out
 
         # analysis notebook and *.h5ad
         File rawH5ad = ToAnnData.rawH5ad
         File filteredH5ad = ToAnnData.filteredH5ad
         File normalizedH5ad = BasicAnalysis.normalizedH5ad
-        File visualizedH5ad = BasicAnalysis.visualizedH5ad
         File notebook = BasicAnalysis.notebook
     }
 }
