@@ -1,4 +1,4 @@
-FROM hisplan/scri-notebook:0.0.2
+FROM quay.io/hisplan/scri-notebook:0.0.3
 
 LABEL maintainer="Jaeyoung Chun (chunj@mskcc.org)"
 
@@ -7,8 +7,8 @@ LABEL maintainer="Jaeyoung Chun (chunj@mskcc.org)"
 # fa requires python <3.9
 RUN conda create -n workspace python=3.8 pip
 RUN source activate workspace \
-    && pip install scanpy[leiden]==1.7.2 papermill==2.3.3 PhenoGraph==1.5.7 \
-    doubletdetection==3.0.0 fa2==0.3.5 seaborn==0.11.1
+    && pip install scanpy[leiden]==1.8.1 papermill==2.3.3 PhenoGraph==1.5.7 \
+    doubletdetection==3.0.0 fa2==0.3.5 seaborn==0.11.1 scikit-misc==0.1.4
 
 COPY ./notebooks/basic-analysis-v*.ipynb /opt/
 COPY ./notebooks/to-adata.ipynb /opt/
