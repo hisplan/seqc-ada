@@ -4,3 +4,4 @@ __pycache_
 *.pyc
 dockers/seqc-basic-analysis/notebooks/outputs
 scing.log
+configs/archive/*
