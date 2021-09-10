@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 wf_name="seqc-ada"
-version="0.0.2"
+version="0.0.3"
 files="submit.sh SeqcAda.deps.zip SeqcAda.wdl SeqcAda.options.aws.json configs/template.*.json"
 dest="$HOME/scing/bin"
 
