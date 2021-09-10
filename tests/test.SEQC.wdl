@@ -56,6 +56,8 @@ workflow SEQC {
         File sparseMoleculeCounts = SEQC.sparseMoleculeCounts
         File sparseReadCounts = SEQC.sparseReadCounts
 
+        Array[File] rawFeatureBCMatrix = SEQC.rawFeatureBCMatrix
+
         File h5 = SEQC.h5
 
         File miniSummaryPdf = SEQC.miniSummaryPdf

@@ -147,15 +147,14 @@ workflow SeqcAda {
         File alignedBam = SEQC.alignedBam
         File mergedFastq = SEQC.mergedFastq
 
+        Array[File] rawFeatureBCMatrix = SEQC.rawFeatureBCMatrix
+
         File h5 = SEQC.h5
 
         File miniSummaryPdf = SEQC.miniSummaryPdf
         File miniSummaryJson = SEQC.miniSummaryJson
         File alignmentSummary = SEQC.alignmentSummary
         File summary = SEQC.summary
-
-        # Array[File] mast = SEQC.mast
-        # File deGeneList = SEQC.deGeneList
 
         File preCorrectionReadArray = SEQC.preCorrectionReadArray
         File cbCorrection = SEQC.cbCorrection

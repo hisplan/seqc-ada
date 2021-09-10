@@ -26,6 +26,7 @@ task SEQC {
     }
 
     parameter_meta {
+        version: { help: "must be 0.2.10 or higher" }
         filterMode : { help: "either scRNA-seq or snRNA-seq" }
         maxInsertSize : { help: "for snRNA-seq, 2304700 for hg38, 4434881 for mm38" }
         extraParameters: { help: "e.g. --no-filter-low-coverage --no-filter-mitochondrial-rna"}
@@ -83,6 +84,8 @@ task SEQC {
         File sparseGenes = outputPrefix + "_sparse_counts_genes.csv"
         File sparseMoleculeCounts = outputPrefix + "_sparse_molecule_counts.mtx"
         File sparseReadCounts = outputPrefix + "_sparse_read_counts.mtx"
+
+        Array[File] rawFeatureBCMatrix = glob("raw_feature_bc_matrix/*")
 
         File h5 = outputPrefix + ".h5"
 
