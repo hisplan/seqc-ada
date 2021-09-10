@@ -3,5 +3,5 @@
     "scCB2.sparseBarcodes": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAda/581f77b0-19ec-4255-a445-1670d9516081/call-SEQC/devtest_sparse_counts_barcodes.csv",
     "scCB2.sparseGenes": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAda/581f77b0-19ec-4255-a445-1670d9516081/call-SEQC/devtest_sparse_counts_genes.csv",
     "scCB2.sparseMoleculeCounts": "s3://dp-lab-gwf-core/cromwell-execution/SeqcAda/581f77b0-19ec-4255-a445-1670d9516081/call-SEQC/devtest_sparse_molecule_counts.mtx",
-    "scCB2.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "scCB2.dockerRegistry": "quay.io/hisplan"
 }

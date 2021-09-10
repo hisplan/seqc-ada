@@ -6,5 +6,5 @@
     "ToAnnData.sparseMoleculeCounts": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_molecule_counts.mtx",
     "ToAnnData.sparseReadCounts": "s3://dp-lab-gwf-core/cromwell-execution/SEQC/d41acfde-e812-4a18-8331-1dcca2e092db/call-SEQC/devtest_sparse_read_counts.mtx",
     "ToAnnData.memoryGB": 32,
-    "ToAnnData.dockerRegistry": "583643567512.dkr.ecr.us-east-1.amazonaws.com"
+    "ToAnnData.dockerRegistry": "quay.io/hisplan"
 }
