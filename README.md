@@ -10,7 +10,7 @@ The pipeline is a part of SCING (Single-Cell pIpeliNe Garden; pronounced as "sin
 
 ## Create Job Files
 
-You need two files for processing a V(D)J sample - one inputs file and one labels file. Use the following example files to help you create your configuration file:
+You need two files for processing a sample - one inputs file and one labels file. Use the following example files to help you create your configuration file:
 
 - `configs/template.inputs.json`
 - `configs/template.labels.json`
@@ -18,7 +18,7 @@ You need two files for processing a V(D)J sample - one inputs file and one label
 ### Assay
 
 Type         | `SeqcAda.assay`
--------------| -----------------------------------------------------------------------------
+------------ | -----------------------------------------------------------------------------
 10x v2 Kit   | `ten_x_v2`
 10x v3 Kit   | `ten_x_v3`
 10x NextGEM  | `ten_x_v3`
@@ -28,8 +28,8 @@ Type         | `SeqcAda.assay`
 Use one of the URLs below for the reference genome:
 
 Type   | `SeqcAda.index`
--------| ---------------------------------------------
-Human  | `s3://seqc-public/genomes/hg38_chr19/`
+------ | ---------------------------------------------
+Human  | `s3://seqc-public/genomes/hg38_long_polya/`
 Mouse  | `s3://seqc-public/genomes/mm38_long_polya/`
 
 ## Submit Your Job
