@@ -1,5 +1,5 @@
 {
-    "SeqcAda.version": "0.2.9",
+    "SeqcAda.version": "0.2.10",
     "SeqcAda.assay": "ten_x_v2",
     "SeqcAda.index": "s3://seqc-public/genomes/hg38_chr19/",
     "SeqcAda.barcodeFiles": "s3://seqc-public/barcodes/ten_x_v2/flat/",
