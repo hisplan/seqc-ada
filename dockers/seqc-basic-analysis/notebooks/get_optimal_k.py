@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from matplotlib.patches import Rectangle
 import seaborn
 import sys, os, io
+import heapq
 
 # Class to suppress output from PhenoGraph
 class HiddenPrints:
@@ -95,7 +96,7 @@ class KOptimizer:
     def find_k(
         self,
         data: scanpy.AnnData,
-        k0: int,
+        ks: list,
         interval: int = 5,
         threshold: float = 0.90,
         window: int = 2,
@@ -108,12 +109,22 @@ class KOptimizer:
         k_window = interval * window
         min_k = np.inf  # minimum k value that was tested
         max_k = -1  # maximum k value that was tested
-        k1 = k0 - interval  # first k value to test
+        k1 = ks[0] - interval  # first k value to test
         c = 0.0  # cost associated with current k
+        cs = []  # heap to store all the costs seen
 
         # Increase k to find satisfactory c
         while c <= threshold:
             k1 += interval
+
+            # reached the end value in k range?
+            if k1 > ks[-1]:
+                # return the max c and associated k
+                c, k1 = heapq.heappop(cs)
+                c = c * -1
+                print("Couldn't find any c > threshold. Using the max c seen.")
+                break
+
             c = 1.0
             min_k2 = k1 - k_window
             max_k2 = k1 + k_window
@@ -130,6 +141,9 @@ class KOptimizer:
                 c = min(KOptimizer.get_Rand_Index(k1, k2, data, k_lookup), c)
                 print(".", end="")
             print(f" Min. Rand Index is: {c}")
+
+            # add to heap. negative c because python implements min heap
+            heapq.heappush(cs, (-c, k1))
 
         # Readout
         if verbose:
