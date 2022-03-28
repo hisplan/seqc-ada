@@ -16,7 +16,7 @@ task BasicAnalysis {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.10"
+    String dockerImage = dockerRegistry + "/seqc-basic-analysis:0.0.11"
     Float inputSize = size(pathRawAdata, "GiB") + size(pathFilteredAdata, "GiB")
 
     String path_outdir = "outputs"
