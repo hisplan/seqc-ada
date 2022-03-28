@@ -2,6 +2,6 @@
 .ipynb_checkpoints
 __pycache_
 *.pyc
-dockers/seqc-basic-analysis/notebooks/outputs
+dockers/seqc-basic-analysis/test/outputs
 scing.log
 configs/archive/*
