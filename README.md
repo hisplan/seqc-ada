@@ -4,6 +4,10 @@ SEQC Ada (AutomateD Analysis)
 
 Ada is considered to be the first computer programmer and her method has been called the world's first computer program.
 
+## Workflow
+
+![workflow](./docs/seqc-ada-workflow.png)
+
 ## Setup
 
 The pipeline is a part of SCING (Single-Cell pIpeliNe Garden; pronounced as "sing" /siŋ/). For setup, please refer to [this page](https://github.com/hisplan/scing). All the instructions below is given under the assumption that you have already configured SCING in your environment.
