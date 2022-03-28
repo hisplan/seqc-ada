@@ -1,9 +1,0 @@
-{
-    "pipelineType": "SeqcAda",
-    "project": "Dev",
-    "sample": "PBMC 5K 10x v3",
-    "owner": "chunj",
-    "destination": "s3://dp-lab-gwf-core/SeqcAda/pbmc-5k-10x-v3",
-    "transfer": "skip",
-    "comment": "SEQC Automated Analysis"
-}

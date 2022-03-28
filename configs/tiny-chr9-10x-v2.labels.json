@@ -1,9 +1,0 @@
-{
-    "pipelineType": "SeqcAda",
-    "project": "Dev",
-    "sample": "Tiny Chr9 10x v2",
-    "owner": "chunj",
-    "destination": "s3://dp-lab-batch/SeqcAda/tiny-chr9-10x-v2",
-    "transfer": "skip",
-    "comment": "SEQC Automated Analysis"
-}

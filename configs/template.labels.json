@@ -3,7 +3,7 @@
     "project": "YOUR_PROJECT_NAME",
     "sample": "YOUR_SAMPLE_NAME",
     "owner": "YOUR_USER_ID",
-    "destination": "s3://.../seqc-ada/",
+    "destination": "s3://.../seqc-ada-results/",
     "transfer": "-",
     "comment": "THIS IS A TEMPLATE"
 }

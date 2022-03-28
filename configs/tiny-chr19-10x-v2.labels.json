@@ -1,9 +1,9 @@
 {
     "pipelineType": "SeqcAda",
     "project": "Dev",
-    "sample": "PBMC 1K 10x v3",
+    "sample": "Tiny Chr19 10x v2",
     "owner": "chunj",
-    "destination": "s3://dp-lab-gwf-core/outputs/SeqcAda/pbmc-1k-10x-v3",
+    "destination": "s3://dp-lab-batch/outputs/SeqcAda/tiny-chr19-10x-v2",
     "transfer": "skip",
     "comment": ""
 }

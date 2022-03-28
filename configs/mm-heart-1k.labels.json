@@ -1,0 +1,10 @@
+{
+    "pipelineType": "SeqcAda",
+    "project": "Dev",
+    "sample": "E18 mouse 1k heart",
+    "owner": "chunj",
+    "destination": "s3://dp-lab-gwf-core/outputs/SeqcAda/mm-heart-1k",
+    "transfer": "skip",
+    "comment": "",
+    "source": "https://www.10xgenomics.com/resources/datasets/1-k-heart-cells-from-an-e-18-mouse-v-3-chemistry-3-standard-3-0-0"
+}
